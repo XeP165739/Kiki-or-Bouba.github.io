@@ -1,1 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Figtree:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-display: 'Fraunces', serif;
+  --font-sans: 'Figtree', sans-serif;
+
+  --color-bg: #F8F7F4;
+  --color-ink: #0C0B1A;
+  --color-muted: #6B6A7E;
+  --color-rule: #E4E3EC;
+
+  --color-kiki: #E5311C;
+  --color-kiki-light: #FDECEA;
+  --color-kiki-mid: #F9BDB7;
+
+  --color-bouba: #7C3AED;
+  --color-bouba-light: #EDE9FE;
+  --color-bouba-mid: #C4B5FD;
+}
+
+html,
+body {
+  background-color: #F8F7F4;
+  color: #0C0B1A;
+  font-family: 'Figtree', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #C4B5FD;
+  color: #0C0B1A;
+}
+
+
+@media (min-width: 768px) {
+  .facts-strip {
+    gap: 4rem;
+  }
+}
+
+.facts-divider {
+  width: 1px;
+  height: 0.75rem;
+  background-color: var(--color-rule, #E4E3EC);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .facts-divider {
+    display: block;
+  }
+}
+
+.text-highlight {
+  color: var(--color-ink, #0C0B1A);
+  font-weight: 500;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(4deg); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-3deg); }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0.4) rotate(-15deg); opacity: 0; }
+  70% { transform: scale(1.08) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-float-a {
+  animation: float-a 5s ease-in-out infinite;
+}
+
+.animate-float-b {
+  animation: float-b 6s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease forwards;
+}
+
+.animate-fade-up-delay {
+  opacity: 0;
+  animation: fade-up 0.5s ease 0.2s forwards;
+}
+
+.animate-fade-up-delay-2 {
+  opacity: 0;
+  animation: fade-up 0.5s ease 0.4s forwards;
+}
