@@ -1,2 +1,2 @@
-# Kiki_or_Boba.github.io
-A questionnaire website that ask if you are more Kiki or Boba.
+# Kiki_or_Bouba.github.io
+A questionnaire website that ask if you are more Kiki or Bouba.
