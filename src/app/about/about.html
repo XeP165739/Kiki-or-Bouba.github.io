@@ -1,11 +1,11 @@
 <nav class="nav-bar">
   <button [routerLink]="['/']" class="btn-back">
       <span class="brand-title">
-    kiki<span class="brand-divider"> or </span>bouba
+        kiki<span class="brand-divider"> or </span>bouba
       </span>
   </button>
-  <button (click)="onStart()" class="btn-primary-sm">
-    Take the test &rarr;
+  <button [routerLink]="['/']" class="nav-button">
+    Home
   </button>
 </nav>
 
@@ -106,7 +106,7 @@
   <!-- Call to Action Section -->
   <section class="cta-section">
     <p class="cta-heading">So — which are you?</p>
-    <button (click)="onStart()" class="btn-primary-lg">
+    <button (click)="onStart()" class="btn-primary-bg">
       Take the test &rarr;
     </button>
   </section>

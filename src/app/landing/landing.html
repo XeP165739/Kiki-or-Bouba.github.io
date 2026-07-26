@@ -1,18 +1,17 @@
 <!-- Nav -->
 <nav class="nav-bar">
-  <button [routerLink]="['/']" class="btn-back">
+  <button [routerLink]="['']" class="btn-back">
       <span class="brand-title">
-    kiki<span class="brand-divider"> or </span>bouba
+        kiki<span class="brand-divider"> or </span>bouba
       </span>
   </button>
-  <button [routerLink]="['/about']" class="nav-button">
+  <button [routerLink]="['about']" class="nav-button">
     About
   </button>
 </nav>
 
 <!-- Hero -->
 <main class="hero-section">
-  <!-- Background shape hints -->
   <div class="bg-shapes-wrapper">
     <div class="bg-kiki-hint animate-float-b">
       <app-kiki-shape-outline [size]="320" color="#E5311C"></app-kiki-shape-outline>
@@ -22,7 +21,6 @@
     </div>
   </div>
 
-  <!-- Floating shapes -->
   <div class="floating-shapes-container">
     <div class="animate-float-a">
       <app-kiki-shape [size]="120" color="#E5311C"></app-kiki-shape>
@@ -32,7 +30,6 @@
     </div>
   </div>
 
-  <!-- Headline -->
   <div class="content-wrapper animate-fade-up">
     <h1 class="hero-headline">
       Are you <span class="text-kiki">Kiki</span> or <span class="text-bouba">Bouba?</span>
@@ -44,7 +41,7 @@
     </p>
 
     <div class="cta-group animate-fade-up-delay-2">
-      <button [routerLink]="['/result']" class="btn-primary">
+      <button [routerLink]="['/result']" class="btn-primary-bg">
         Take the test &rarr;
       </button>
       <button [routerLink]="['/about']" class="btn-secondary">
@@ -53,13 +50,11 @@
     </div>
   </div>
 
-  <!-- Bottom label -->
   <p class="hero-footer-label">
     40 Questions &middot; 4 Sections &middot; Interestng Results
   </p>
 </main>
 
-<!-- Divider facts strip -->
 <div class="facts-strip">
   <span>First described by <strong class="text-highlight">Wolfgang Köhler</strong>, 1929</span>
   <span class="facts-divider"></span>

@@ -39,6 +39,7 @@ body {
   color: #0C0B1A;
 }
 
+/* Navigation bar */
 .nav-bar {
   display: flex;
   align-items: center;
@@ -91,8 +92,10 @@ body {
   color: var(--color-ink, #0C0B1A);
 }
 
+/* Shapes */
+
 .bg-shapes-wrapper {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
@@ -111,6 +114,20 @@ body {
   bottom: 25%;
   opacity: 0.06;
 }
+
+/* main container */
+
+.main-container {
+  flex: 1 1 0%;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4rem 1.5rem;
+  width: 100%;
+}
+
+
+/* buttons */
 
 .btn-primary-bg {
   padding: 1rem 2rem;
@@ -156,31 +173,6 @@ body {
 .btn-secondary:hover {
   color: var(--color-ink, #0C0B1A);
 }
-
-@media (min-width: 768px) {
-  .facts-strip {
-    gap: 4rem;
-  }
-}
-
-.facts-divider {
-  width: 1px;
-  height: 0.75rem;
-  background-color: var(--color-rule, #E4E3EC);
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .facts-divider {
-    display: block;
-  }
-}
-
-.text-highlight {
-  color: var(--color-ink, #0C0B1A);
-  font-weight: 500;
-}
-
 
 @keyframes float-a {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
