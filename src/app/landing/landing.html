@@ -1,69 +1,69 @@
-<div class="landing-container">
-  <!-- Nav -->
-  <nav class="nav-bar">
-    <span class="brand-title">
-      kiki<span class="brand-divider"> or </span>bouba
-    </span>
-    <button (click)="onAbout()" class="nav-button">
-      About
-    </button>
-  </nav>
+<!-- Nav -->
+<nav class="nav-bar">
+  <button [routerLink]="['/']" class="btn-back">
+      <span class="brand-title">
+    kiki<span class="brand-divider"> or </span>bouba
+      </span>
+  </button>
+  <button [routerLink]="['/about']" class="nav-button">
+    About
+  </button>
+</nav>
 
-  <!-- Hero -->
-  <main class="hero-section">
-    <!-- Background shape hints -->
-    <div class="bg-shapes-wrapper">
-      <div class="bg-kiki-hint animate-float-b">
-        <app-kiki-shape-outline [size]="320" color="#E5311C"></app-kiki-shape-outline>
-      </div>
-      <div class="bg-bouba-hint animate-float-a">
-        <app-bouba-shape-outline [size]="360" color="#7C3AED"></app-bouba-shape-outline>
-      </div>
+<!-- Hero -->
+<main class="hero-section">
+  <!-- Background shape hints -->
+  <div class="bg-shapes-wrapper">
+    <div class="bg-kiki-hint animate-float-b">
+      <app-kiki-shape-outline [size]="320" color="#E5311C"></app-kiki-shape-outline>
     </div>
-
-    <!-- Floating shapes -->
-    <div class="floating-shapes-container">
-      <div class="animate-float-a">
-        <app-kiki-shape [size]="120" color="#E5311C"></app-kiki-shape>
-      </div>
-      <div class="animate-float-b">
-        <app-bouba-shape [size]="120" color="#7C3AED"></app-bouba-shape>
-      </div>
+    <div class="bg-bouba-hint animate-float-a">
+      <app-bouba-shape-outline [size]="360" color="#7C3AED"></app-bouba-shape-outline>
     </div>
-
-    <!-- Headline -->
-    <div class="content-wrapper animate-fade-up">
-      <h1 class="hero-headline">
-        Are you <span class="text-kiki">Kiki</span> or <span class="text-bouba">Bouba?</span>
-      </h1>
-
-      <p class="hero-description animate-fade-up-delay">
-        A Questionnaire based on a fascinating psychological phenomenon discovered by Wolfgang Köhler &mdash;
-        Kiki and Bouba. Which one are you? Let's find out!
-      </p>
-
-      <div class="cta-group animate-fade-up-delay-2">
-        <button (click)="onStart()" class="btn-primary">
-          Take the test &rarr;
-        </button>
-        <button (click)="onAbout()" class="btn-secondary">
-          What is this?
-        </button>
-      </div>
-    </div>
-
-    <!-- Bottom label -->
-    <p class="hero-footer-label">
-      40 Questions &middot; 4 Sections &middot; Interestng Results
-    </p>
-  </main>
-
-  <!-- Divider facts strip -->
-  <div class="facts-strip">
-    <span>First described by <strong class="text-highlight">Wolfgang Köhler</strong>, 1929</span>
-    <span class="facts-divider"></span>
-    <span><strong class="text-highlight">98%</strong> of people agree on which is which</span>
-    <span class="facts-divider"></span>
-    <span>Cross-cultural &middot; language-independent</span>
   </div>
+
+  <!-- Floating shapes -->
+  <div class="floating-shapes-container">
+    <div class="animate-float-a">
+      <app-kiki-shape [size]="120" color="#E5311C"></app-kiki-shape>
+    </div>
+    <div class="animate-float-b">
+      <app-bouba-shape [size]="120" color="#7C3AED"></app-bouba-shape>
+    </div>
+  </div>
+
+  <!-- Headline -->
+  <div class="content-wrapper animate-fade-up">
+    <h1 class="hero-headline">
+      Are you <span class="text-kiki">Kiki</span> or <span class="text-bouba">Bouba?</span>
+    </h1>
+
+    <p class="hero-description animate-fade-up-delay">
+      A Questionnaire based on a fascinating psychological phenomenon discovered by Wolfgang Köhler &mdash;
+      Kiki and Bouba. Which one are you? Let's find out!
+    </p>
+
+    <div class="cta-group animate-fade-up-delay-2">
+      <button (click)="onStart()" class="btn-primary">
+        Take the test &rarr;
+      </button>
+      <button [routerLink]="['/about']" class="btn-secondary">
+        What is this?
+      </button>
+    </div>
+  </div>
+
+  <!-- Bottom label -->
+  <p class="hero-footer-label">
+    40 Questions &middot; 4 Sections &middot; Interestng Results
+  </p>
+</main>
+
+<!-- Divider facts strip -->
+<div class="facts-strip">
+  <span>First described by <strong class="text-highlight">Wolfgang Köhler</strong>, 1929</span>
+  <span class="facts-divider"></span>
+  <span><strong class="text-highlight">98%</strong> of people agree on which is which</span>
+  <span class="facts-divider"></span>
+  <span>Cross-cultural &middot; language-independent</span>
 </div>

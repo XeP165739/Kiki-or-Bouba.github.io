@@ -19,6 +19,10 @@
   --color-bouba-mid: #C4B5FD;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   background-color: #F8F7F4;
