@@ -1,13 +1,13 @@
 <!-- Navigation -->
-<nav class="nav-header">
+<nav class="nav-bar">
   <span class="brand-title">
     kiki<span class="brand-divider"> or </span>bouba
   </span>
   <div class="nav-actions">
-    <button [routerLink]="['/about']" class="nav-link">
+    <button [routerLink]="['/about']" class="nav-button">
       About
     </button>
-    <button [routerLink]="['/']" class="nav-link">
+    <button [routerLink]="['/']" class="nav-button">
       Retake
     </button>
   </div>
@@ -30,7 +30,9 @@
 
     <div class="shape-wrapper">
       <div class="animate-scale-in">
-        <ng-component [ngComponentOutlet]="onResult()" [ngComponentOutletInputs]="{ size : 69 }"></ng-component>
+        <div class="animate-float-b">
+          <ng-component [ngComponentOutlet]="onResult()" [ngComponentOutletInputs]="{ size : 69 }"></ng-component>
+        </div>
         <div class="result-shape-placeholder" style="--color-shape-color: var(--color-profile-color);"></div>
       </div>
     </div>
@@ -91,40 +93,8 @@
     </div>
     <div>
       <p class="teaser-text">
-        You scored <strong class="highlight-ink">35%</strong> Bouba &mdash; the
+        You scored <strong class="highlight-ink">{{result_score}}%</strong> {{result_title}} &mdash; the
         fluid, intuitive side of your personality is never far away.
-      </p>
-    </div>
-  </section>
-
-  <!-- Email & Share Section -->
-  <section class="share-section">
-    <h2 class="section-heading">Share your result</h2>
-    <p class="share-subtitle">
-      Send your Kiki or Bouba result to your via email.
-    </p>
-
-    <!-- Default State: Buttons -->
-    <div class="share-actions">
-      <button type="button" class="btn-outline">
-        Email my result
-      </button>
-      <button [routerLink]="['']" class="btn-ghost">
-        Retake the test
-      </button>
-    </div>
-
-    <!-- Form State (Conditionally shown in app) -->
-    <form class="email-form hidden">
-      <input type="email" placeholder="your@email.com" class="email-input" />
-      <button type="submit" class="btn-submit" style="background-color: var(--color-profile-color);"> Send &rarr;
-      </button>
-    </form>
-
-    <!-- Confirmation State (Conditionally shown in app) -->
-    <div class="email-success-msg hidden" style="background-color: var(--color-profile-light);">
-      <p class="success-text">
-        Check your email app to complete sending &check;
       </p>
     </div>
   </section>

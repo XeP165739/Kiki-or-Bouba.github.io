@@ -26,6 +26,7 @@ export class Result {
   bouba_score = 100 - this.kiki_score;
   mid_score = this.kiki_score;
   result_title = 'Kiki';
+  result_score = ( this.kiki_score > this.bouba_score ) ? this.kiki_score : this.bouba_score;
   result_headline = 'Sharp minded';
 
   onStart() {}
