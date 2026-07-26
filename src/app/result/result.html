@@ -1,1 +1,131 @@
-<p>result works!</p>
+<!-- Navigation -->
+<nav class="nav-header">
+  <span class="brand-title">
+    kiki<span class="brand-divider"> or </span>bouba
+  </span>
+  <div class="nav-actions">
+    <button [routerLink]="['/about']" class="nav-link">
+      About
+    </button>
+    <button [routerLink]="['/']" class="nav-link">
+      Retake
+    </button>
+  </div>
+</nav>
+
+<!-- Main Results Container -->
+<main class="main-container">
+
+  <div class="bg-shapes-wrapper">
+    <div class="bg-kiki-hint animate-float-b">
+      <app-kiki-shape-outline [size]="320" color="#E5311C"></app-kiki-shape-outline>
+    </div>
+    <div class="bg-bouba-hint animate-float-a">
+      <app-bouba-shape-outline [size]="360" color="#7C3AED"></app-bouba-shape-outline>
+    </div>
+  </div>
+
+  <header class="result-header">
+    <p class="section-label">Your result</p>
+
+    <div class="shape-wrapper">
+      <div class="animate-scale-in">
+        <ng-component [ngComponentOutlet]="onResult()" [ngComponentOutletInputs]="{ size : 69 }"></ng-component>
+        <div class="result-shape-placeholder" style="--color-shape-color: var(--color-profile-color);"></div>
+      </div>
+    </div>
+
+    <h1 class="result-title animate-fade-up" style="color: var(--color-profile-color);"> {{ result_title }} </h1>
+    <p class="result-headline animate-fade-up-delay"> {{ result_headline }} </p>
+  </header>
+
+  <!-- Score Bar Section -->
+  <section class="score-bar-section animate-fade-up-delay">
+    <div class="score-labels">
+      <span class="score-kiki">Kiki <span id="kiki-pct-text">{{ kiki_score }}%</span></span>
+      <span class="score-bouba">Bouba <span id="bouba-pct-text">{{ bouba_score }}%</span></span>
+    </div>
+    <div class="score-bar-track">
+      <div class="score-bar-fill" [style.--kiki-score.%]="mid_score" [style.--bouba-score.%]="mid_score"></div>
+    </div>
+  </section>
+
+  <!-- Description Card -->
+  <section class="description-card animate-fade-up-delay-2"
+    style="--color-card-bg: var(--color-profile-light); --color-card-border: var(--color-profile-color);">
+    <p class="description-text">
+      <!-- Insert profile.description here -->
+      Your answers indicate a strong preference for structured thinking and clear boundaries. Like the visual sharp
+      points of a kiki shape, you bring focus, precision, and quick decision-making into complex situations.
+    </p>
+  </section>
+
+  <!-- Traits Grid -->
+  <section class="traits-section animate-fade-up-delay-2">
+    <h2 class="section-heading">Your traits</h2>
+    <div class="traits-grid">
+      <div class="trait-item">
+        <div class="trait-dot" style="background-color: var(--color-profile-color);"></div>
+        <span class="trait-label">Decisive</span>
+      </div>
+      <div class="trait-item">
+        <div class="trait-dot" style="background-color: var(--color-profile-color);"></div>
+        <span class="trait-label">Precision-Driven</span>
+      </div>
+      <div class="trait-item">
+        <div class="trait-dot" style="background-color: var(--color-profile-color);"></div>
+        <span class="trait-label">Structured</span>
+      </div>
+      <div class="trait-item">
+        <div class="trait-dot" style="background-color: var(--color-profile-color);"></div>
+        <span class="trait-label">Direct Communicator</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Type Teaser Card -->
+  <section class="teaser-card">
+    <div class="teaser-shape-icon">
+      <!-- Bouba or Kiki Shape Outline -->
+      <div class="shape-outline-placeholder" style="--color-outline-color: var(--color-bouba-accent);"></div>
+    </div>
+    <div>
+      <p class="teaser-text">
+        You scored <strong class="highlight-ink">35%</strong> Bouba &mdash; the
+        fluid, intuitive side of your personality is never far away.
+      </p>
+    </div>
+  </section>
+
+  <!-- Email & Share Section -->
+  <section class="share-section">
+    <h2 class="section-heading">Share your result</h2>
+    <p class="share-subtitle">
+      Send your Kiki or Bouba result to your via email.
+    </p>
+
+    <!-- Default State: Buttons -->
+    <div class="share-actions">
+      <button type="button" class="btn-outline">
+        Email my result
+      </button>
+      <button [routerLink]="['']" class="btn-ghost">
+        Retake the test
+      </button>
+    </div>
+
+    <!-- Form State (Conditionally shown in app) -->
+    <form class="email-form hidden">
+      <input type="email" placeholder="your@email.com" class="email-input" />
+      <button type="submit" class="btn-submit" style="background-color: var(--color-profile-color);"> Send &rarr;
+      </button>
+    </form>
+
+    <!-- Confirmation State (Conditionally shown in app) -->
+    <div class="email-success-msg hidden" style="background-color: var(--color-profile-light);">
+      <p class="success-text">
+        Check your email app to complete sending &check;
+      </p>
+    </div>
+  </section>
+</main>
