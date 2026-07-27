@@ -1,0 +1,130 @@
+.font-display {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Header & Visual Demo */
+.section-label {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.main-title {
+  font-family: Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 3rem;
+  }
+}
+
+.visual-demo-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid var(--color-rule);
+}
+
+.shape-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1 1 0%;
+}
+
+.shape-label {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.color-kikior {
+  color: var(--color-kiki);
+}
+
+.color-bouba{
+  color: var(--color-bouba);
+}
+
+.demo-divider {
+  color: var(--color-muted);
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* Article Body */
+.story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--color-ink);
+  line-height: 1.625;
+}
+
+.story-heading {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.story-paragraph {
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.625;
+  margin: 0;
+}
+
+.story-paragraph strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* References Footer */
+.references-footer {
+  border-top: 1px solid var(--color-rule);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.references-text {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  line-height: 1.625;
+  margin: 0;
+}
+
+.references-text strong {
+  color: var(--color-ink);
+}
+
+/* Call to Action */
+.cta-section {
+  margin-top: 4rem;
+  text-align: center;
+  border-top: 1px solid var(--color-rule);
+  padding-top: 3rem;
+}
+
+.cta-heading {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-ink);
+  margin-bottom: 1.5rem;
+}

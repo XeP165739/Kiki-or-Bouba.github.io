@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
-import { Landing } from './landing/landing';
-import { About } from './about/about';
+import { Landing } from './pages/landing/landing';
+import { About } from './pages/about/about';
 import { Result } from './result/result';
+import { Main } from './main/main';
 
 export const routes: Routes = [
   { path : '',
-    component : MainLayout,
+    component : Main,
     children: [
       { path: '', redirectTo: 'landing', pathMatch: 'full' },
       { path: 'landing', component: Landing },
