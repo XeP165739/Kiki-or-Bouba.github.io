@@ -27,8 +27,6 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/app/landing/landing.css",
-              "src/app/about/about.css",
               "src/app/result/result.css"
             ],
             "server": "src/main.server.ts",
