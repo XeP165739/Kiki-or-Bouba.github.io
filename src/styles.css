@@ -39,9 +39,6 @@ body {
   color: #0C0B1A;
 }
 
-/* Navigation bar */
-
-
 /* Shapes */
 
 .bg-shapes-wrapper {
@@ -64,20 +61,6 @@ body {
   bottom: 25%;
   opacity: 0.06;
 }
-
-/* main container */
-
-.main-container {
-  flex: 1 1 0%;
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4rem 1.5rem;
-  width: 100%;
-}
-
-
-/* buttons */
 
 .btn-primary-bg {
   padding: 1rem 2rem;
