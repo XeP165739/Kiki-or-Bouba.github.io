@@ -40,57 +40,7 @@ body {
 }
 
 /* Navigation bar */
-.nav-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--color-rule, #E4E3EC);
-}
 
-.btn-back {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-muted);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: color 0.15s ease;
-}
-
-.btn-back:hover {
-  color: var(--color-ink);
-}
-
-.brand-title {
-  font-family: var(--font-display, 'Fraunces', serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-ink, #0C0B1A);
-  letter-spacing: -0.025em;
-}
-
-.brand-divider {
-  color: var(--color-muted, #6B6A7E);
-  font-weight: 300;
-}
-
-.nav-button {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-muted, #6B6A7E);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: color 200ms ease;
-}
-
-.nav-button:hover {
-  color: var(--color-ink, #0C0B1A);
-}
 
 /* Shapes */
 
