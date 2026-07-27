@@ -44,6 +44,7 @@
   border: none;
   cursor: pointer;
   transition: color 200ms ease;
+  margin: 0 10px;
 }
 
 .nav-button:hover {
