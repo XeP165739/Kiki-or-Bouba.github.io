@@ -1,5 +1,4 @@
 <div class="quiz-container">
-  <!-- Nav -->
   <nav class="quiz-nav">
     <button [routerLink]="['/']" class="btn-back">
       <span class="brand-title">
@@ -7,7 +6,7 @@
       </span>
     </button>
     <span class="quiz-progress-text">
-      {{ current + 1 }} <span class="quiz-progress-total">/ {{ questions.length }}</span>
+      {{ current() + 1 }} <span class="quiz-progress-total">/ {{ questions?.length }}</span>
     </span>
   </nav>
 
@@ -21,13 +20,13 @@
     <!-- Pagination Dots -->
     <div class="quiz-dots">
       @for (q of questions; track $index) {
-      <div class="quiz-dot" [class.is-completed]="$index < current" [class.is-active]="$index === current"></div>
+      <div class="quiz-dot" [class.is-completed]="$index < current()" [class.is-active]="$index === current()"></div>
       }
     </div>
 
     <!-- Question text -->
     <h2 class="quiz-question">
-      {{ currentQuestion.text }}
+      {{ currentQuestion?.question }}
     </h2>
 
     <!-- Options -->
@@ -36,17 +35,10 @@
       <button (click)="choose('kiki')" [disabled]="!!selected" class="option-button option-button--kiki"
         [class.is-selected]="selected === 'kiki'" [class.is-dimmed]="selected && selected !== 'kiki'">
         <div class="option-card">
-          @if (currentQuestion.visual) {
-          <div class="option-visual">
-            <app-kiki-shape [size]="80" color="#E5311C"></app-kiki-shape>
-            <span class="option-label">This one</span>
-          </div>
-          } @else {
           <div class="option-text-wrapper">
             <app-kiki-shape [size]="24" color="#E5311C" class="option-icon"></app-kiki-shape>
-            <p class="option-text">{{ currentQuestion.kiki }}</p>
+            <p class="option-text">{{ currentQuestion?.kiki_answer }}</p>
           </div>
-          }
         </div>
       </button>
 
@@ -54,17 +46,10 @@
       <button (click)="choose('bouba')" [disabled]="!!selected" class="option-button option-button--bouba"
         [class.is-selected]="selected === 'bouba'" [class.is-dimmed]="selected && selected !== 'bouba'">
         <div class="option-card">
-          @if (currentQuestion.visual) {
-          <div class="option-visual">
-            <app-bouba-shape [size]="80" color="#7C3AED"></app-bouba-shape>
-            <span class="option-label">This one</span>
-          </div>
-          } @else {
           <div class="option-text-wrapper">
             <app-bouba-shape [size]="24" color="#7C3AED" class="option-icon"></app-bouba-shape>
-            <p class="option-text">{{ currentQuestion.bouba }}</p>
+            <p class="option-text">{{ currentQuestion?.bouba_answer }}</p>
           </div>
-          }
         </div>
       </button>
     </div>
