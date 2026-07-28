@@ -3,7 +3,7 @@ import { BoubaShapeComponent } from "../../components/shapes/bouba-shape/bouba-s
 import { KikiShapeComponent } from "../../components/shapes/kiki-shape/kiki-shape";
 import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 
-import { Fetch, Question } from '../../services/json/fetch';
+import { Fetch, Question, TraitType } from '../../services/json/fetch';
 import { Calc } from '../../services/core/calc';
 
 export type AnswerType = 'kiki' | 'bouba';
@@ -11,6 +11,8 @@ export type AnswerType = 'kiki' | 'bouba';
 export interface Answer{
   answer: AnswerType,
   bias: number,
+  trait_group: TraitType,
+  weight: number,
 }
 
 @Component({
@@ -72,7 +74,7 @@ export class Quiz implements OnInit{
 
     setTimeout(() => {
       const bias = (type === 'kiki') ? this.currentQuestion.kiki_bias : this.currentQuestion.bouba_bias;
-      const next = [...this.answers, { answer: type , bias: bias }];
+      const next = [...this.answers, { answer: type , bias: bias , trait_group: this.currentQuestion.trait_group, weight: this.currentQuestion.weight}];
 
       if (this.current() + 1 >= this.questions.length) {
         this.onComplete(next);

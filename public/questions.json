@@ -4,139 +4,179 @@
     "kiki_answer": "I would embrace it and make fun of myself",
     "bouba_answer": "I would melt into a puddle and laugh awkwardly",
     "kiki_bias": 67,
-    "bouba_bias": 56
+    "bouba_bias": 56,
+    "trait_group": "group_1_social",
+    "weight": 0.8
   },
   {
     "question": "One day you became your opposite gender, what is your first action?",
     "kiki_answer": "I would start dating my opposite gender immediately",
     "bouba_answer": "I would probably be confused and tell my friends what happened",
     "kiki_bias": 80,
-    "bouba_bias": 60
+    "bouba_bias": 60,
+    "trait_group": "group_3_cognitive",
+    "weight": 0.7
   },
   {
     "question": "What is your future plan on settling",
     "kiki_answer": "Having much fun and partying with my friends",
     "bouba_answer": "I would like a travel everywhere and have party occasionally",
     "kiki_bias": 89,
-    "bouba_bias": 48
+    "bouba_bias": 48,
+    "trait_group": "group_2_spontaneity",
+    "weight": 0.9
   },
   {
     "question": "What would you do when you okay so he said yes would go?",
     "kiki_answer": "Divorce babes, divorse",
     "bouba_answer": "I dont know what you mean there babes",
     "kiki_bias": 70,
-    "bouba_bias": 75
+    "bouba_bias": 75,
+    "trait_group": "group_4_drive",
+    "weight": 0.6
   },
   {
     "question": "If you were transformed into a soft, squishy creature, what would your primary form of communication be?",
     "kiki_answer": "Making sharp, dramatic \"ZAP!\" and \"CLACK!\" noises with your mind",
     "bouba_answer": "Making low, soothing \"Grumble-hum\" noises while rolling around lazily",
     "kiki_bias": 85,
-    "bouba_bias": 95
+    "bouba_bias": 95,
+    "trait_group": "group_1_social",
+    "weight": 1.0
   },
   {
     "question": "What is your sleeping schedule?",
     "kiki_answer": "I am a night owl, sleeping whenever i like to.",
     "bouba_answer": "I sleep early so that i can have more time in the morning",
     "kiki_bias": 40,
-    "bouba_bias": 78
+    "bouba_bias": 78,
+    "trait_group": "group_2_spontaneity",
+    "weight": 0.9
   },
   {
     "question": "What is the first thing you do with your phone after waking up",
     "kiki_answer": "I start playing games",
     "bouba_answer": "I open tiktok",
     "kiki_bias": 95,
-    "bouba_bias": 45
+    "bouba_bias": 45,
+    "trait_group": "group_4_drive",
+    "weight": 0.8
   },
   {
     "question": "How many times do you drink everyday?",
     "kiki_answer": "Whenever i like to",
     "bouba_answer": "I try to drink as much recommended as possible",
     "kiki_bias": 76,
-    "bouba_bias": 78
+    "bouba_bias": 78,
+    "trait_group": "group_2_spontaneity",
+    "weight": 0.7
   },
   {
     "question": "Are you a pen or pencil guy?",
     "kiki_answer": "I like using pen more.",
     "bouba_answer": "Im more of a pencil guy.",
     "kiki_bias": 66,
-    "bouba_bias": 40
+    "bouba_bias": 40,
+    "trait_group": "group_3_cognitive",
+    "weight": 0.5
   },
   {
     "question": "When trying to review, what do you listen to more?",
     "kiki_answer": "I like listening to my friends reviewing because i retain more",
     "bouba_answer": "I like listening to music",
     "kiki_bias": 67,
-    "bouba_bias": 74
+    "bouba_bias": 74,
+    "trait_group": "group_3_cognitive",
+    "weight": 0.6
   },
   {
     "question": "How do you handle large social gatherings or parties?",
     "kiki_answer": "I talk to everyone and become the center of attention",
     "bouba_answer": "I stick with a small group of close friends or stay near the food",
     "kiki_bias": 85,
-    "bouba_bias": 55
+    "bouba_bias": 55,
+    "trait_group": "group_1_social",
+    "weight": 1.0
   },
   {
     "question": "What do you do if a friend cancels plans last minute?",
     "kiki_answer": "Great, free time! I immediately make new plans or hang out with someone else",
     "bouba_answer": "I feel a bit relieved and just relax at home by myself",
     "kiki_bias": 72,
-    "bouba_bias": 65
+    "bouba_bias": 65,
+    "trait_group": "group_2_spontaneity",
+    "weight": 0.8
   },
   {
     "question": "How do you handle active group chat notifications?",
     "kiki_answer": "I reply instantly and keep the conversation going continuously",
     "bouba_answer": "I leave them on mute/read until I have the social battery to reply",
     "kiki_bias": 90,
-    "bouba_bias": 82
+    "bouba_bias": 82,
+    "trait_group": "group_1_social",
+    "weight": 0.9
   },
   {
     "question": "When meeting someone new, who usually initiates the talk?",
     "kiki_answer": "I always start the conversation first without hesitation",
     "bouba_answer": "I wait for them to say hi first so I don't feel awkward",
     "kiki_bias": 88,
-    "bouba_bias": 60
+    "bouba_bias": 60,
+    "trait_group": "group_1_social",
+    "weight": 1.0
   },
   {
     "question": "How do you share secrets or major personal news?",
     "kiki_answer": "I end up telling my close circle almost immediately out of excitement",
     "bouba_answer": "I keep things strictly to myself until absolutely necessary",
     "kiki_bias": 70,
-    "bouba_bias": 75
+    "bouba_bias": 75,
+    "trait_group": "group_1_social",
+    "weight": 0.8
   },
   {
     "question": "How do you make major life decisions?",
     "kiki_answer": "I trust my gut feeling and take immediate risks",
     "bouba_answer": "I analyze all pros and cons carefully before deciding",
     "kiki_bias": 84,
-    "bouba_bias": 78
+    "bouba_bias": 78,
+    "trait_group": "group_3_cognitive",
+    "weight": 1.0
   },
   {
     "question": "What best describes your typical emotional state?",
     "kiki_answer": "Highly expressive—I wear my heart on my sleeve",
     "bouba_answer": "Calm, reserved, and private about my inner feelings",
     "kiki_bias": 76,
-    "bouba_bias": 68
+    "bouba_bias": 68,
+    "trait_group": "group_1_social",
+    "weight": 0.9
   },
   {
     "question": "When facing a sudden crisis or problem, what is your approach?",
     "kiki_answer": "Improvise on the spot and figure it out as I go",
     "bouba_answer": "Stay composed and build a structured step-by-step backup plan",
     "kiki_bias": 82,
-    "bouba_bias": 88
+    "bouba_bias": 88,
+    "trait_group": "group_3_cognitive",
+    "weight": 0.9
   },
   {
     "question": "How do you feel about strict rules and routines?",
     "kiki_answer": "I feel restricted and prefer breaking or bending them",
     "bouba_answer": "I find comfort and stability in following a set structure",
     "kiki_bias": 70,
-    "bouba_bias": 80
+    "bouba_bias": 80,
+    "trait_group": "group_2_spontaneity",
+    "weight": 1.0
   },
   {
     "question": "What drives you more in daily life?",
     "kiki_answer": "Passion, spontaneous excitement, and seeking novel experiences",
     "bouba_answer": "Stability, long-term security, and peace of mind",
     "kiki_bias": 92,
-    "bouba_bias": 70
+    "bouba_bias": 70,
+    "trait_group": "group_4_drive",
+    "weight": 1.0
   }
 ]
