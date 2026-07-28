@@ -3,10 +3,11 @@ import { KikiShapeComponent } from "../../components/shapes/kiki-shape/kiki-shap
 import { BoubaShapeComponent } from "../../components/shapes/bouba-shape/bouba-shape";
 import { Router, RouterLink, ɵEmptyOutletComponent } from "@angular/router";
 import { NgComponentOutlet } from "@angular/common";
-import { Answer, AnswerType } from '../../quiz/quiz';
 import { Calc } from '../../services/core/calc';
 import { BoubaShapeOutlineComponent } from "../../components/shapes/bouba-shape-outline/bouba-shape-outline";
 import { KikiShapeOutlineComponent } from "../../components/shapes/kiki-shape-outline/kiki-shape-outline";
+import { Answer } from '../quiz/quiz';
+import { Nav } from "../../components/nav/nav";
 @Component({
   selector: 'app-result',
   imports: [
@@ -14,7 +15,8 @@ import { KikiShapeOutlineComponent } from "../../components/shapes/kiki-shape-ou
     ɵEmptyOutletComponent,
     NgComponentOutlet,
     BoubaShapeOutlineComponent,
-    KikiShapeOutlineComponent
+    KikiShapeOutlineComponent,
+    Nav
 ],
   templateUrl: './result.html',
   styleUrl: './result.css',

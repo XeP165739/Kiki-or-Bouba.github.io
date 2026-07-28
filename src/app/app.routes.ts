@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { Landing } from './pages/landing/landing';
 import { About } from './pages/about/about';
-import { Test } from './test/test';
 import { Main } from './main/main';
+import { guardGuard } from './services/core/guard-guard';
 
 export const routes: Routes = [
   { path : '',
@@ -15,11 +15,11 @@ export const routes: Routes = [
   },
   {
     path : 'test',
-    component : Test,
+    // component : Test,
     children: [
       { path: '', redirectTo: 'quiz', pathMatch: 'full' },
       { path: 'quiz', loadComponent: () => import('./pages/quiz/quiz').then((m) => m.Quiz) },
-      { path: 'result', loadComponent: () => import('./pages/result/result').then((m => m.Result)) }
+      { path: 'result', loadComponent: () => import('./pages/result/result').then((m => m.Result)), canActivate: [guardGuard]}
     ]
   },
 ];

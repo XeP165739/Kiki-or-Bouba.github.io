@@ -31,9 +31,13 @@ export class Quiz implements OnInit{
   private calService = inject(Calc);
 
   questions: Question[] = [];
+  is_ready = signal(false);
 
   async ngOnInit() : Promise<void> {
     this.questions = await this.fetchService.getData();
+    setTimeout(() => {
+      this.is_ready.set(true);
+    }, 1000);
     console.log("Questions fetched: ", this.questions)
   }
 
@@ -55,12 +59,13 @@ export class Quiz implements OnInit{
   }
 
   private onComplete(answers : Answer[]) : void {
+    console.log("on_complete-ativated");
     this.calService.setAnswers(answers);
-    this.routerService.navigate( ['result'] , { relativeTo: this.routeService });
+    this.routerService.navigate( ['..', 'result'] , { relativeTo: this.routeService });
   }
 
   choose(type: AnswerType): void {
-    if (this.animating || this.selected) return;
+    if (!this.is_ready() || this.animating || this.selected) return;
 
     this.selected = type;
     this.animating = true;
