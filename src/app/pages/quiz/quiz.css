@@ -40,10 +40,6 @@
   transition: color 0.2s ease;
 }
 
-.quiz-back-button:hover {
-  color: var(--color-ink);
-}
-
 .quiz-logo {
   font-size: 1rem;
   font-weight: 600;
