@@ -14,14 +14,17 @@
     <div class="shape-wrapper">
       <div class="animate-scale-in">
         <div class="animate-float-b">
-          <ng-component [ngComponentOutlet]="onResult()" [ngComponentOutletInputs]="{ size : 69 }"></ng-component>
+          @if (result_title === 'Kiki'){
+            <app-kiki-shape [size]='93'></app-kiki-shape>
+          } @else {
+            <app-bouba-shape [size]='93'></app-bouba-shape>
+          }
         </div>
         <div class="result-shape-placeholder" style="--color-shape-color: var(--color-profile-color);"></div>
       </div>
     </div>
 
     <h1 class="result-title animate-fade-up" style="color: var(--color-profile-color);"> {{ result_title }} </h1>
-    <p class="result-headline animate-fade-up-delay"> {{ result_headline }} </p>
   </header>
 
   <!-- Score Bar Section -->
@@ -51,19 +54,19 @@
     <div class="traits-grid">
       <div class="trait-item">
         <div class="trait-dot" style="background-color: var(--color-profile-color);"></div>
-        <span class="trait-label">Decisive</span>
+        <span class="trait-label">{{social_type}}</span>
       </div>
       <div class="trait-item">
         <div class="trait-dot" style="background-color: var(--color-profile-color);"></div>
-        <span class="trait-label">Precision-Driven</span>
+        <span class="trait-label">{{behavior_type}}</span>
       </div>
       <div class="trait-item">
         <div class="trait-dot" style="background-color: var(--color-profile-color);"></div>
-        <span class="trait-label">Structured</span>
+        <span class="trait-label">{{cognitive_type}}</span>
       </div>
       <div class="trait-item">
         <div class="trait-dot" style="background-color: var(--color-profile-color);"></div>
-        <span class="trait-label">Direct Communicator</span>
+        <span class="trait-label">{{drive_type}}</span>
       </div>
     </div>
   </section>
