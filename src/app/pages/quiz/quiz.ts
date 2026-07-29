@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, Signal, signal } from '@angular/core';
 import { BoubaShapeComponent } from "../../components/shapes/bouba-shape/bouba-shape";
 import { KikiShapeComponent } from "../../components/shapes/kiki-shape/kiki-shape";
 import { ActivatedRoute, Router, RouterLink } from "@angular/router";
@@ -6,14 +6,7 @@ import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 import { Fetch, Question, TraitType } from '../../services/json/fetch';
 import { Calc } from '../../services/core/calc';
 
-export type AnswerType = 'kiki' | 'bouba';
-
-export interface Answer{
-  answer: AnswerType,
-  bias: number,
-  trait_group: TraitType,
-  weight: number,
-}
+export type Answer = 'kiki' | 'bouba';
 
 @Component({
   selector: 'app-quiz',
@@ -37,16 +30,27 @@ export class Quiz implements OnInit{
 
   async ngOnInit() : Promise<void> {
     this.questions = await this.fetchService.getData();
+    this.initQuiz();
+
     setTimeout(() => {
       this.is_ready.set(true);
     }, 1000);
+
     console.log("Questions fetched: ", this.questions)
   }
 
   current = signal(0);
   answers: Answer[] = [];
-  selected: AnswerType | null = null;
+  selected: Answer | null = null;
   animating = false;
+
+  private initQuiz(){
+    this.current.set(0);
+    this.answers = [];
+    this.selected = null;
+    this.animating = false;
+    this.calService.initCalc();
+  }
 
   private increment(){
      this.current.set(this.current() + 1);
@@ -62,19 +66,18 @@ export class Quiz implements OnInit{
 
   private onComplete(answers : Answer[]) : void {
     console.log("on_complete-ativated");
-    this.calService.setAnswers(answers);
+    this.calService.setCalc(this.questions, answers);
     this.routerService.navigate( ['..', 'result'] , { relativeTo: this.routeService });
   }
 
-  choose(type: AnswerType): void {
+  choose(type: Answer): void {
     if (!this.is_ready() || this.animating || this.selected) return;
 
     this.selected = type;
     this.animating = true;
 
     setTimeout(() => {
-      const bias = (type === 'kiki') ? this.currentQuestion.kiki_bias : this.currentQuestion.bouba_bias;
-      const next = [...this.answers, { answer: type , bias: bias , trait_group: this.currentQuestion.trait_group, weight: this.currentQuestion.weight}];
+      const next = [...this.answers, type];
 
       if (this.current() + 1 >= this.questions.length) {
         this.onComplete(next);
