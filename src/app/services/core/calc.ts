@@ -7,6 +7,42 @@ export type SocialType = 'Intovert' | 'Ambivert' | 'Extrovert';
 export type BehaviorType = 'Structured' | 'Felxible' | 'Spontaneous';
 export type CognitiveType = 'Analitical' | 'Pragmatic' | 'Intuitive';
 export type DriveType = 'Security' | 'Balanced' | 'Dynamic';
+
+const socialDescriptions: Record<SocialType, string> = {
+  Intovert: 'a focus on thoughtful internal processing',
+  Ambivert: 'a balanced interaction with the world around you',
+  Extrovert: 'an engaging and externally expressive energy',
+};
+
+const behaviorDescriptions: Record<BehaviorType, string> = {
+  Structured: 'structured thinking and clear boundaries',
+  Felxible: 'adaptable habits and open-ended approaches',
+  Spontaneous: 'in-the-moment actions and dynamic fluid choices',
+};
+
+const cognitiveDescriptions: Record<CognitiveType, string> = {
+  Analitical: 'bring precision, logic, and sharp focus',
+  Pragmatic: 'deliver realistic, actionable, and efficient solutions',
+  Intuitive: 'rely on rapid pattern-recognition and deep insight',
+};
+
+const driveDescriptions: Record<DriveType, string> = {
+  Security: 'maintaining stability and grounded confidence',
+  Balanced: 'sustaining steady harmony across changing environments',
+  Dynamic: 'pushing momentum and exploring new possibilities',
+};
+
+const traitMeta: Record<TraitType, { metaphor: string; quality: string }> = {
+  Kiki: {
+    metaphor: 'the visual sharp points of a Kiki shape',
+    quality: 'focus, precision, and quick decision-making',
+  },
+  Bouba: {
+    metaphor: 'the smooth, rounded curves of a Bouba shape',
+    quality: 'warmth, adaptability, and natural harmony',
+  },
+};
+
 export interface ResultTemplate {
   trait: TraitType;
   kiki_score: number,
@@ -15,6 +51,7 @@ export interface ResultTemplate {
   behavior: BehaviorType;
   cognitive: CognitiveType;
   drive: DriveType;
+  description: string;
 }
 
 @Injectable({
@@ -125,15 +162,33 @@ export class Calc {
     }
   }
 
+  private get_personality_sentence(trait: TraitType, social: SocialType, behavior: BehaviorType, cognitive: CognitiveType, drive: DriveType): string {
+    const socialText = socialDescriptions[social];
+    const behaviorText = behaviorDescriptions[behavior];
+    const cognitiveText = cognitiveDescriptions[cognitive];
+    const driveText = driveDescriptions[drive];
+    const { metaphor, quality } = traitMeta[trait];
+
+    return `Your answers indicate ${socialText} alongside a strong preference for ${behaviorText}. When facing challenges, you ${cognitiveText} while ${driveText}. Like ${metaphor}, you bring ${quality} into complex situations—defining you as a ${trait}.`;
+  }
+
   get onResult(): ResultTemplate {
+    const trait: TraitType = (this.trait_score[0] > this.trait_score[1]) ? 'Kiki' : 'Bouba';
+    const social: SocialType = (this.social_score[0] > this.social_score[1]) ? (this.social_score[0] > this.social_score[2]) ? 'Intovert' : 'Ambivert' : (this.social_score[1] > this.social_score[2]) ? 'Ambivert' : 'Extrovert';
+    const behavior: BehaviorType = (this.behavior_score[0] > this.behavior_score[1]) ? (this.behavior_score[0] > this.behavior_score[2]) ? 'Structured' : 'Felxible' : (this.behavior_score[1] > this.behavior_score[2]) ? 'Felxible' : 'Spontaneous';
+    const cognitive: CognitiveType = (this.cognitive_score[0] > this.cognitive_score[1]) ? (this.cognitive_score[0] > this.cognitive_score[2]) ? 'Analitical' : 'Pragmatic' : (this.cognitive_score[1] > this.cognitive_score[2]) ? 'Pragmatic' : 'Intuitive';
+    const drive: DriveType = (this.drive_score[0] > this.drive_score[1]) ? (this.drive_score[0] > this.drive_score[2]) ? 'Security' : 'Balanced' : (this.drive_score[1] > this.drive_score[2]) ? 'Balanced' : 'Dynamic';
+    const description: string = this.get_personality_sentence(trait, social, behavior, cognitive, drive);
+
     const result: ResultTemplate = {
-      trait: (this.trait_score[0] > this.trait_score[1]) ? 'Kiki' : 'Bouba',
+      trait: trait,
       kiki_score: this.trait_score[0],
       bouba_score: this.trait_score[1],
-      social: (this.social_score[0] > this.social_score[1]) ? (this.social_score[0] > this.social_score[2]) ? 'Intovert' : 'Ambivert' : (this.social_score[1] > this.social_score[2]) ? 'Ambivert' : 'Extrovert',
-      behavior: (this.behavior_score[0] > this.behavior_score[1]) ? (this.behavior_score[0] > this.behavior_score[2]) ? 'Structured' : 'Felxible' : (this.behavior_score[1] > this.behavior_score[2]) ? 'Felxible' : 'Spontaneous',
-      cognitive: (this.cognitive_score[0] > this.cognitive_score[1]) ? (this.cognitive_score[0] > this.cognitive_score[2]) ? 'Analitical' : 'Pragmatic' : (this.cognitive_score[1] > this.cognitive_score[2]) ? 'Pragmatic' : 'Intuitive',
-      drive: (this.drive_score[0] > this.drive_score[1]) ? (this.drive_score[0] > this.drive_score[2]) ? 'Security' : 'Balanced' : (this.drive_score[1] > this.drive_score[2]) ? 'Balanced' : 'Dynamic',
+      social: social,
+      behavior: behavior,
+      cognitive: cognitive,
+      drive: drive,
+      description: description,
     }
 
     return result;
