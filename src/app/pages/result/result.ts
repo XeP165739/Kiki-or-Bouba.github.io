@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { KikiShapeComponent } from "../../components/shapes/kiki-shape/kiki-shape";
 import { BoubaShapeComponent } from "../../components/shapes/bouba-shape/bouba-shape";
 import { Calc, ResultTemplate } from '../../services/core/calc';
 import { BoubaShapeOutlineComponent } from "../../components/shapes/bouba-shape-outline/bouba-shape-outline";
 import { KikiShapeOutlineComponent } from "../../components/shapes/kiki-shape-outline/kiki-shape-outline";
-import { Answer } from '../quiz/quiz';
 import { Nav } from "../../components/nav/nav";
 @Component({
   selector: 'app-result',
