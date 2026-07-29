@@ -29,12 +29,14 @@ export class Quiz implements OnInit{
   is_ready = signal(false);
 
   async ngOnInit() : Promise<void> {
-    this.questions = await this.fetchService.getData();
-    this.initQuiz();
+    if(!this.is_ready()){
+      this.questions = await this.fetchService.getData();
+      this.initQuiz();
+    }
 
     setTimeout(() => {
       this.is_ready.set(true);
-    }, 1000);
+    }, 500);
 
     console.log("Questions fetched: ", this.questions)
   }
