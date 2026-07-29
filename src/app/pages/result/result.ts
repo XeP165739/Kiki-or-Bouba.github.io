@@ -35,11 +35,11 @@ export class Result implements OnInit{
   mid_score: number = 0;
   result_title: string = 'Waiting'
   result_score: number = 0;
-  result_headline:  string = 'template';
   social_type: string = '';
   behavior_type: string = '';
   cognitive_type: string = '';
   drive_type: string = '';
+  description: string = '';
 
   initValue(): void {
     if (this.result === null) return;
@@ -49,11 +49,11 @@ export class Result implements OnInit{
     this.mid_score = this.kiki_score;
     this.result_title = this.result.trait;
     this.result_score = ( this.kiki_score > this.bouba_score ) ? this.kiki_score : this.bouba_score;
-    this.result_headline = 'Template';
 
     this.social_type = this.result.social;
     this.behavior_type = this.result.behavior;
     this.cognitive_type = this.result.cognitive;
     this.drive_type = this.result.drive;
+    this.description = this.result.description;
   }
 }
