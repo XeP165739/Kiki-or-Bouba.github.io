@@ -1,60 +1,99 @@
-# KikiOrBouba
-A questionnaire website that ask if you are more Kiki or Bouba.
+# 🧠 KikiOrBouba
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.8.
+> **Are you sharp and energetic, or soft and adaptable?**  
+> *KikiOrBouba* is an interactive, psychology-inspired questionnaire web application built with **Angular** that uses **Fuzzy Logic** to determine whether you are a **Kiki** or a **Bouba** based on four core personality traits.
 
-## Development server
+🎮 **[Play the Live Quiz Here!](https://xep165739.github.io/Kiki-or-Bouba.github.io/landing)**
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🌟 Overview & Concept
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The **Kiki-Bouba Effect** is a famous psychological phenomenon demonstrating sound-shape symbolism—where sharp, jagged shapes are naturally mapped to the name "Kiki" and soft, rounded shapes to "Bouba". 
 
-## Code scaffolding
+This project applies that sensory intuition to human personality:
+- Instead of simple binary scoring, **KikiOrBouba** uses **Fuzzy Logic algorithms** to measure degrees of membership across four key personality dimensions.
+- Based on your responses, the system calculates your balance of sharp (*Kiki*) versus rounded (*Bouba*) traits to place you into one of **4 personality types**.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🎮 Play Online
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+You don't need to build or run this project locally to take the quiz! Visit the hosted GitHub Pages site:
 
-```bash
-ng generate --help
-```
+👉 **[https://xep165739.github.io/Kiki-or-Bouba.github.io/landing](https://xep165739.github.io/Kiki-or-Bouba.github.io/landing)**
 
-## Building
+---
 
-To build the project run:
+## 🦄 The 2 Trait Types
 
-```bash
-ng build
-```
+The classification evaluates your balance between **Kiki** (sharp, direct, structured, intense) and **Bouba** (soft, harmonious, flexible, gentle):
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. **Kiki** 🔺  
+   *Kiki across Social, Behavioral, Cognitive, and Drive dimensions.*  
+   Direct, analytical, decisive, and goal-focused.
 
-## Running unit tests
+2. **Bouba** 🔵  
+   *Bouba across Social, Behavioral, Cognitive, and Drive dimensions.*  
+   Warm, empathetic, adaptable, and naturally intuitive.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## 🔬 Core Dimensions & Fuzzy Logic Engine
 
-## Running end-to-end tests
+The questionnaire evaluates four main personality traits:
 
-For end-to-end (e2e) testing, run:
+* **💬 Social:** Direct and sharp communication (*Kiki*) vs. empathetic and harmonious connection (*Bouba*).
+* **🔄 Behavior:** Structured, decisive actions (*Kiki*) vs. flexible, adaptable responses (*Bouba*).
+* **🧠 Cognitive:** Analytical, systematic thinking (*Kiki*) vs. intuitive, holistic processing (*Bouba*).
+* **⚡ Drive:** Intense, task-oriented motivation (*Kiki*) vs. steady, flow-state motivation (*Bouba*).
 
-```bash
-ng e2e
-```
+### How Fuzzy Logic Works
+1. **Fuzzification:** Raw input choices are mapped onto continuous membership functions (0.0 to 1.0) for each of the four dimensions.
+2. **Fuzzy Rules:** Evaluates overlapping memberships across Social, Behavior, Cognitive, and Drive vectors.
+3. **Defuzzification:** Computes the final score to determine your overall placement among the 4 personality types.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🛠️ Built With
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* **Framework:** [Angular](https://angular.dev/) (v22.0.8)
+* **Hosting:** [GitHub Pages](https://pages.github.com/)
+* **Testing:** [Vitest](https://vitest.dev/)
+* **Logic Core:** Custom TypeScript Fuzzy Logic System
+* **Styling:** Modern CSS3
+
+---
+
+## 💻 Local Development Setup
+
+If you want to clone the repo and run or contribute to the source code locally:
+
+### Prerequisites
+
+* [Node.js](https://nodejs.org/) (v18 or higher)
+* npm
+* **[Angular CLI](https://angular.dev/tools/cli)** (v24) installed globally:
+  ```bash
+  npm install -g @angular/cli@24
+  ```
+
+### Installation & Run
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/XeP165739/Kiki-or-Bouba.github.io
+   cd KikiOrBouba
+   ```
+2. **Install Dependenies:**
+   ```Bash
+   npm install
+   ```
+3. **Start Server:**
+   ```Bash
+   ng serve
+   ```
+
+## Licence
+> This project is open-source and available under the MIT License.
+---
