@@ -73,9 +73,9 @@ If you want to clone the repo and run or contribute to the source code locally:
 
 * [Node.js](https://nodejs.org/) (v18 or higher)
 * npm
-* **[Angular CLI](https://angular.dev/tools/cli)** (v24) installed globally:
+* **[Angular CLI](https://angular.dev/tools/cli)** (v22) installed globally:
   ```bash
-  npm install -g @angular/cli@24
+  npm install -g @angular/cli@22
   ```
 
 ### Installation & Run
